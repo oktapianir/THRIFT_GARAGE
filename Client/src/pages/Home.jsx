@@ -1,38 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Search, ShoppingCart, User } from "lucide-react";
-import bgThrift from '../assets/bg_thrift.png';
+import bgThrift from '../assets/bg_thrift.png'; 
 
 const Home = () => {
-  const [cartCount, setCartCount] = useState(0);
-
   const styles = {
     container: {
       minHeight: '100vh',
-      backgroundColor: 'white'
+      backgroundColor: 'white',
     },
     navbar: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '1.5rem 3rem',
-      backgroundColor: 'white'
-    },
-    navLeft: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '3rem'
-    },
-    navLink: {
-      textDecoration: 'none',
-      color: '#374151',
-      fontWeight: '500',
-      fontSize: '0.875rem',
-      transition: 'color 0.3s'
+      backgroundColor: 'white',
+      borderBottom: '1px solid #E5E7EB'
     },
     logo: {
       fontSize: '1.5rem',
       fontWeight: 'bold',
-      color: 'black'
+      color: '#2B3723'
     },
     navRight: {
       display: 'flex',
@@ -73,7 +60,9 @@ const Home = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       backgroundColor: 'white',
-      minHeight: 'calc(100vh - 88px)'
+      minHeight: 'calc(100vh - 88px)',
+      backgroundImage: `URL(${bgThrift})` 
+
     },
     heroLeft: {
       width: '50%',
@@ -120,62 +109,6 @@ const Home = () => {
       alignItems: 'center',
       paddingRight: '4rem'
     },
-    clothingRack: {
-      position: 'relative',
-      width: '450px',
-      height: '400px'
-    },
-    rackPole: {
-      position: 'absolute',
-      left: '50%',
-      top: '0',
-      width: '0.75rem',
-      height: '5rem',
-      backgroundColor: '#d97706',
-      borderRadius: '9999px',
-      transform: 'translateX(-50%)'
-    },
-    rackBar: {
-      position: 'absolute',
-      top: '4rem',
-      left: '2rem',
-      right: '2rem',
-      height: '0.75rem',
-      backgroundColor: '#d97706',
-      borderRadius: '9999px'
-    },
-    clothesContainer: {
-      position: 'absolute',
-      top: '5rem',
-      left: '3rem',
-      right: '3rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start'
-    },
-    clothingItem: {
-      width: '3.5rem',
-      height: '6rem',
-      borderTopLeftRadius: '0.5rem',
-      borderTopRightRadius: '0.5rem',
-      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-      transition: 'transform 0.3s'
-    },
-    hangerContainer: {
-      position: 'absolute',
-      top: '3rem',
-      left: '3.5rem',
-      right: '3.5rem',
-      display: 'flex',
-      justifyContent: 'space-between'
-    },
-    hanger: {
-      width: '0.5rem',
-      height: '1.5rem',
-      backgroundColor: 'white',
-      borderRadius: '0.125rem',
-      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
-    },
     brandSection: {
       backgroundColor: '#2B3723',
       padding: '3rem 0'
@@ -184,7 +117,8 @@ const Home = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '5rem'
+      gap: '5rem',
+      flexWrap: 'wrap'
     },
     brandText: {
       color: 'white',
@@ -196,104 +130,142 @@ const Home = () => {
     }
   };
 
-  const clothes = [
-    { color: '#16a34a', transform: 'rotate(-1deg)' }, // Green
-    { color: '#d1d5db', transform: 'rotate(1deg)' },  // Light gray
-    { color: '#9ca3af', transform: 'rotate(0deg)' },  // Medium gray
-    { color: '#6b7280', transform: 'rotate(-1deg)' }, // Darker gray
-    { color: '#4b5563', transform: 'rotate(1deg)' },  // Dark gray
-    { color: '#374151', transform: 'rotate(0deg)' },  // Very dark gray
-    { color: '#1f2937', transform: 'rotate(-1deg)' }  // Almost black
-  ];
-
   return (
     <div style={styles.container}>
-      {/* Navigation */}
-      <nav style={styles.navbar}>
-        <div style={styles.navLeft}>
-          <a href="/" style={styles.navLink}>Home</a>
-          <a href="/About" style={styles.navLink}>About</a>
-          <a href="#" style={styles.navLink}>Katalog</a>
-          <a href="#" style={styles.navLink}>Contact</a>
-        </div>
 
-        <div style={styles.logo}>Thrift.Garage</div>
-
-        <div style={styles.navRight}>
-          <div style={styles.searchContainer}>
-            <Search style={styles.searchIcon} />
-            <input
-              type="text"
-              placeholder="Search for products..."
-              style={styles.searchInput}
-            />
-          </div>
-          <ShoppingCart style={styles.navIcon} />
-          <User style={styles.navIcon} />
-        </div>
-      </nav>
-
-      {/* Main Hero Section */}
+      {/* Hero Section */}
       <div style={styles.hero}>
-        {/* Left Side Content */}
         <div style={styles.heroLeft}>
           <h1 style={styles.heroTitle}>
-            Second chances,
-            <br />
-            first class style
+            Second chances,<br />first class style
           </h1>
-
-          <div>
-            <p style={styles.heroText}>
-              Step into a world where fashion finds new meaning, every piece carries a
-            </p>
-            <p style={styles.heroText}>
-              story and every style gets a second chance. Our thrift collections are
-            </p>
-            <p style={styles.heroText}>
-              carefully curated to bring you unique and affordable fashion that never
-            </p>
-            <p style={styles.heroText}>
-              goes out of style.
-            </p>
-          </div>
-
-          <p style={styles.heroSubtext}>
-            Made to be loved again......
-          </p>
-
-          <button 
-            style={styles.shopButton}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#2B3723'}
-            onMouseOut={(e) => e.target.style.backgroundColor = '#2B3723'}
-          >
-            Shop Now
-          </button>
-        </div>
-
-        {/* Right Side - Clothing Rack */}
-        <div style={styles.heroRight}>
-          <img
-            src={bgThrift}
-            alt="Clothing Rack with various colored clothes"
-            style={{
-              maxWidth: '100%',
-              height: 'auto',
-              objectFit: 'contain',
-              maxHeight: '500px'
-            }}
-          />
+          <p style={styles.heroText}>Step into a world where fashion finds new meaning, every piece carries a</p>
+          <p style={styles.heroText}>story and every style gets a second chance. Our thrift collections are</p>
+          <p style={styles.heroText}>carefully curated to bring you unique and affordable fashion that never</p>
+          <p style={styles.heroText}>goes out of style.</p>
+          <p style={styles.heroSubtext}>Made to be loved again......</p>
+          <button style={styles.shopButton}>Shop Now</button>
         </div>
       </div>
 
-      {/* Brand Logos Section */}
+      {/* Brand Section */}
       <div style={styles.brandSection}>
         <div style={styles.brandContainer}>
           <div style={styles.brandText}>Adidas</div>
           <div style={styles.brandText}>ZARA</div>
-          <div style={{...styles.brandText, ...styles.brandItalic}}>Champion</div>
+          <div style={{ ...styles.brandText, ...styles.brandItalic }}>Champion</div>
           <div style={styles.brandText}>NIKE</div>
           <div style={styles.brandText}>H&M</div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        padding: '3rem 1rem',
+        backgroundColor: '#ffffff',
+        flexWrap: 'wrap',
+        gap: '2rem'
+      }}>
+        {[
+          {
+            title: "100% Original",
+            description: "Barang thrift dijamin original dan berkualitas",
+            icon: "🧥"
+          },
+          {
+            title: "Packing Aman",
+            description: "Packing rapi dan aman sampai tujuan",
+            icon: "📦"
+          },
+          {
+            title: "Harga Terjangkau",
+            description: "Produk thrift pilihan harga bersahabat",
+            icon: "💸"
+          },
+          {
+            title: "Pelanggan Puas",
+            description: "Ribuan pelanggan puas belanja disini",
+            icon: "🧑‍🤝‍🧑"
+          }
+        ].map((item, idx) => (
+          <div key={idx} style={{
+            width: '200px',
+            textAlign: 'center',
+            border: idx === 2 ? '2px solid #000' : 'none',
+            padding: '1rem',
+            borderRadius: '1rem',
+            boxShadow: idx === 2 ? '0 0 10px rgba(0,0,0,0.1)' : 'none'
+          }}>
+            <div style={{ fontSize: '2rem' }}>{item.icon}</div>
+            <h4 style={{ fontWeight: 'bold', marginTop: '1rem' }}>{item.title}</h4>
+            <p style={{ fontSize: '0.875rem', color: '#4B5563' }}>{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* New Arrivals */}
+      <div style={{ padding: '2rem 1rem', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>NEW ARRIVALS</h2>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: '2rem'
+        }}>
+          {[1, 2, 3].map((item) => (
+            <div key={item} style={{
+              border: '1px solid #E5E7EB',
+              borderRadius: '1rem',
+              padding: '1rem',
+              width: '200px',
+              textAlign: 'center'
+            }}>
+              <div style={{
+                width: '100%',
+                height: '200px',
+                backgroundColor: '#F3F4F6',
+                borderRadius: '1rem',
+                marginBottom: '1rem'
+              }}>
+                <span style={{
+                  lineHeight: '200px',
+                  color: '#9CA3AF'
+                }}>Gambar Produk</span>
+              </div> 
+              <h3 style={{ fontWeight: 'bold' }}>Ziprem Adidas</h3>
+              <p style={{ color: '#6B7280' }}>Rp 175.000</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div style={{ backgroundColor: '#F9FAFB', padding: '3rem 1rem' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>TESTIMONI</h2>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: '2rem'
+        }}>
+          {[1, 2, 3].map((item) => (
+            <div key={item} style={{
+              backgroundColor: 'white',
+              padding: '1.5rem',
+              borderRadius: '1rem',
+              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+              width: '300px'
+            }}>
+              <div style={{ marginBottom: '1rem' }}>⭐⭐⭐⭐⭐</div>
+              <p style={{ color: '#4B5563', fontSize: '0.875rem' }}>
+                Barangnya bagus, sesuai deskripsi, pengiriman cepat dan pelayanan ramah!
+              </p>
+              <p style={{ fontWeight: 'bold', marginTop: '1rem' }}>- Pelanggan</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -301,3 +273,4 @@ const Home = () => {
 };
 
 export default Home;
+

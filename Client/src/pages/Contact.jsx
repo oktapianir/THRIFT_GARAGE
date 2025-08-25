@@ -7,10 +7,10 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import bgThrift from "../assets/model_thrift.jpg";
+import bgThrift from "../assets/hoodies_photography.jpg";
 
-const About = () => {
-  // const [cartCount, setCartCount] = useState(0);
+const Contact = () => {
+
 
   const styles = {
     container: {
@@ -90,7 +90,7 @@ const About = () => {
       paddingBottom: "4rem",
     },
     heroTitle: {
-      fontSize: "3.75rem",
+      fontSize: "2.75rem",
       fontWeight: "bold",
       color: "black",
       lineHeight: "1.1",
@@ -323,68 +323,31 @@ const About = () => {
     },
   };
 
-  // const clothes = [
-  //   { color: "#16a34a", transform: "rotate(-1deg)" }, // Green
-  //   { color: "#d1d5db", transform: "rotate(1deg)" }, // Light gray
-  //   { color: "#9ca3af", transform: "rotate(0deg)" }, // Medium gray
-  //   { color: "#6b7280", transform: "rotate(-1deg)" }, // Darker gray
-  //   { color: "#4b5563", transform: "rotate(1deg)" }, // Dark gray
-  //   { color: "#374151", transform: "rotate(0deg)" }, // Very dark gray
-  //   { color: "#1f2937", transform: "rotate(-1deg)" }, // Almost black
-  // ];
-
   return (
     <div style={styles.container}>
-      {/* Navigation */}
-      {/* <nav style={styles.navbar}>
-        <div style={styles.navLeft}>
-          <a href="/" style={styles.navLink}>
-            Home
-          </a>
-          <a href="/About.jsx" style={styles.navLink}>
-            About
-          </a>
-          <a href="#" style={styles.navLink}>
-            Katalog
-          </a>
-          <a href="/Contact.jsx" style={styles.navLink}>
-            Contact
-          </a>
-        </div>
-
-        <div style={styles.logo}>Thrift.Garage</div>
-
-        <div style={styles.navRight}>
-          <div style={styles.searchContainer}>
-            <Search style={styles.searchIcon} />
-            <input
-              type="text"
-              placeholder="Search for products..."
-              style={styles.searchInput}
-            />
-          </div>
-          <ShoppingCart style={styles.navIcon} />
-          <User style={styles.navIcon} />
-        </div>
-      </nav> */}
-
+    
       {/* Main Hero Section */}
       <div style={styles.hero}>
         {/* Left Side Content */}
         <div style={styles.heroLeft}>
           <h1 style={styles.heroTitle}>
-            THRIFT.GARAGE
+            HERE TO FIND US
             <br />
           </h1>
 
           <div>
             <p style={styles.heroText}>
-              Kami percaya bahwa tampil stylish tidak harus mahal. Di sini, kamu
-              bisa menemukan berbagai jenis pakaian mulai dari hoodie, sweater,
-              kemeja, jaket, hingga fashion kasual lainnya dengan merek-merek
-              ternama yang sudah dikenal kualitasnya. Semua produk kami dipilih
-              dengan teliti agar tetap terjaga kebersihan, kualitas, dan
-              kelayakannya, sehingga nyaman dipakai dan tetap terlihat keren.
+                <div style={styles.Icon}>
+                    <li>
+                        Thrift.Garage@gmail.com 
+                    </li>
+                    <li>
+                        +62 812 345 6789
+                    </li>
+                    <li>
+                        Jl.Kebon Kopi, Cimahi, Indonesia
+                    </li>
+                </div>
             </p>
           </div>
 
@@ -393,7 +356,7 @@ const About = () => {
             onMouseOver={(e) => (e.target.style.backgroundColor = "#2B3723")}
             onMouseOut={(e) => (e.target.style.backgroundColor = "#2B3723")}
           >
-            Ayo berkenalan lebih jauh
+            Contact Us
           </button>
         </div>
 
@@ -401,9 +364,9 @@ const About = () => {
         <div style={styles.heroRight}>
           <img
             src={bgThrift}
-            alt="Clothing Rack with various colored clothes"
+            alt="Clothes for contact"
             style={{
-              maxWidth: "100%",
+              maxWidth: "100%",     
               height: "auto",
               objectFit: "contain",
               maxHeight: "500px",
@@ -554,4 +517,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Contact;

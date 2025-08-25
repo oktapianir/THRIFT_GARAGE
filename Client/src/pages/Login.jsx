@@ -7,11 +7,9 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import bgThrift from "../assets/model_thrift.jpg";
+import bgThrift from "../assets/image-login.jpg";
 
-const About = () => {
-  // const [cartCount, setCartCount] = useState(0);
-
+const Login = () => {
   const styles = {
     container: {
       minHeight: "100vh",
@@ -90,7 +88,7 @@ const About = () => {
       paddingBottom: "4rem",
     },
     heroTitle: {
-      fontSize: "3.75rem",
+      fontSize: "2.75rem",
       fontWeight: "bold",
       color: "black",
       lineHeight: "1.1",
@@ -126,6 +124,7 @@ const About = () => {
       justifyContent: "center",
       alignItems: "center",
       paddingRight: "4rem",
+      paddingLeft: "5rem"
     },
     clothingRack: {
       position: "relative",
@@ -323,235 +322,80 @@ const About = () => {
     },
   };
 
-  // const clothes = [
-  //   { color: "#16a34a", transform: "rotate(-1deg)" }, // Green
-  //   { color: "#d1d5db", transform: "rotate(1deg)" }, // Light gray
-  //   { color: "#9ca3af", transform: "rotate(0deg)" }, // Medium gray
-  //   { color: "#6b7280", transform: "rotate(-1deg)" }, // Darker gray
-  //   { color: "#4b5563", transform: "rotate(1deg)" }, // Dark gray
-  //   { color: "#374151", transform: "rotate(0deg)" }, // Very dark gray
-  //   { color: "#1f2937", transform: "rotate(-1deg)" }, // Almost black
-  // ];
-
   return (
     <div style={styles.container}>
-      {/* Navigation */}
-      {/* <nav style={styles.navbar}>
-        <div style={styles.navLeft}>
-          <a href="/" style={styles.navLink}>
-            Home
-          </a>
-          <a href="/About.jsx" style={styles.navLink}>
-            About
-          </a>
-          <a href="#" style={styles.navLink}>
-            Katalog
-          </a>
-          <a href="/Contact.jsx" style={styles.navLink}>
-            Contact
-          </a>
-        </div>
-
-        <div style={styles.logo}>Thrift.Garage</div>
-
-        <div style={styles.navRight}>
-          <div style={styles.searchContainer}>
-            <Search style={styles.searchIcon} />
-            <input
-              type="text"
-              placeholder="Search for products..."
-              style={styles.searchInput}
-            />
-          </div>
-          <ShoppingCart style={styles.navIcon} />
-          <User style={styles.navIcon} />
-        </div>
-      </nav> */}
-
       {/* Main Hero Section */}
       <div style={styles.hero}>
-        {/* Left Side Content */}
-        <div style={styles.heroLeft}>
-          <h1 style={styles.heroTitle}>
-            THRIFT.GARAGE
-            <br />
-          </h1>
-
-          <div>
-            <p style={styles.heroText}>
-              Kami percaya bahwa tampil stylish tidak harus mahal. Di sini, kamu
-              bisa menemukan berbagai jenis pakaian mulai dari hoodie, sweater,
-              kemeja, jaket, hingga fashion kasual lainnya dengan merek-merek
-              ternama yang sudah dikenal kualitasnya. Semua produk kami dipilih
-              dengan teliti agar tetap terjaga kebersihan, kualitas, dan
-              kelayakannya, sehingga nyaman dipakai dan tetap terlihat keren.
-            </p>
-          </div>
-
-          <button
-            style={styles.shopButton}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#2B3723")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#2B3723")}
+        {/* New Arrivals */}
+        <div style={{ padding: "2rem 1rem", textAlign: "center"}}>
+          <h2
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              marginBottom: "1.5rem",
+            }}
           >
-            Ayo berkenalan lebih jauh
-          </button>
+          </h2>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: "2rem",
+            }}
+          >
+            {[1].map((item) => (
+              <div
+                key={item}
+                style={{
+                  border: "1px solid #E5E7EB",
+                  borderRadius: "1rem",
+                  padding: "1rem",
+                  width: "200px",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    backgroundColor: "#F3F4F6",
+                    borderRadius: "1rem",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <span
+                    style={{
+                      lineHeight: "200px",
+                      color: "#9CA3AF",
+                    }}
+                  >
+                    Gambar Produk
+                  </span>
+                </div>
+                <h3 style={{ fontWeight: "bold" }}>Ziprem Adidas</h3>
+                <p style={{ color: "#6B7280" }}>Rp 175.000</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Right Side - Clothing Rack */}
         <div style={styles.heroRight}>
           <img
             src={bgThrift}
-            alt="Clothing Rack with various colored clothes"
+            alt="Clothes for contact"
             style={{
-              maxWidth: "100%",
+              maxWidth: "80%",
               height: "auto",
               objectFit: "contain",
-              maxHeight: "500px",
+              maxHeight: "900px",
             }}
           />
         </div>
-      </div>
-
-      {/* Footer */}
-      <footer style={styles.footer}>
-        {/* Footer Top Promotional Banner */}
-        <div style={styles.footerTop}>
-          <div style={styles.footerPromo}>
-            <h3 style={styles.footerPromoTitle}>
-              STAY UP TO DATE FOR OUR LATEST OFFERS
-            </h3>
-          </div>
-          <div>
-            <button style={styles.footerPromoButton}>
-              <span style={styles.liveBadge}>LIVE</span>
-              THRIFT HUNT LIVE
-            </button>
-            <div style={styles.footerPromoSubtitle}>
-              Cari barang branded murah bareng aku yuk!
-              <br />
-              #ThriftFinds #BrandedMurah #LiveShopping
-            </div>
-          </div>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
-          >
-            <div
-              style={{
-                width: "2rem",
-                height: "2rem",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Instagram
-                style={{ width: "1rem", height: "1rem", color: "#2B3723" }}
-              />
-            </div>
-            <div
-              style={{
-                width: "2rem",
-                height: "2rem",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: "1rem",
-                  height: "1rem",
-                  backgroundColor: "#2B3723",
-                  borderRadius: "50%",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                width: "2rem",
-                height: "2rem",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Facebook
-                style={{ width: "1rem", height: "1rem", color: "#2B3723" }}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Main Content */}
-        <div style={styles.footerContent}>
-          {/* Brand Section */}
-          <div style={styles.footerBrand}>
-            <h4 style={styles.footerBrandTitle}>THRIFT.GARAGE</h4>
-            <p style={styles.footerBrandDescription}>
-              We have a collection of sweaters and hoodies as well as more
-              clothes, styles that are interesting for you
-            </p>
-            <div style={styles.socialIcons}>
-              <div style={styles.socialIcon}>
-                <Twitter style={styles.socialIconSvg} />
-              </div>
-              <div style={styles.socialIcon}>
-                <Facebook style={styles.socialIconSvg} />
-              </div>
-              <div style={styles.socialIcon}>
-                <Instagram style={styles.socialIconSvg} />
-              </div>
-            </div>
-          </div>
-
-          {/* Company Links */}
-          <div style={styles.footerColumn}>
-            <h5 style={styles.footerColumnTitle}>Company</h5>
-            <a href="#" style={styles.footerLink}>
-              Home
-            </a>
-            <a href="#" style={styles.footerLink}>
-              About
-            </a>
-            <a href="#" style={styles.footerLink}>
-              Katalog
-            </a>
-            <a href="#" style={styles.footerLink}>
-              Contact
-            </a>
-          </div>
-
-          {/* Help Links */}
-          <div style={styles.footerColumn}>
-            <h5 style={styles.footerColumnTitle}>Help</h5>
-            <a href="#" style={styles.footerLink}>
-              WhatsApp
-            </a>
-            <a href="#" style={styles.footerLink}>
-              Instagram
-            </a>
-            <a href="#" style={styles.footerLink}>
-              Call
-            </a>
-            <a href="#" style={styles.footerLink}>
-              Email
-            </a>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div style={styles.footerBottom}>
-          <p>Thrift.Garage ©2025 All Right Reserved</p>
-        </div>
-      </footer>
+      </div>    
     </div>
   );
 };
 
-export default About;
+export default Login;
