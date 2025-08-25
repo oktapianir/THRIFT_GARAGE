@@ -125,7 +125,6 @@ const Contact = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      paddingRight: "4rem",
     },
     clothingRack: {
       position: "relative",
