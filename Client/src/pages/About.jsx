@@ -323,50 +323,8 @@ const About = () => {
     },
   };
 
-  // const clothes = [
-  //   { color: "#16a34a", transform: "rotate(-1deg)" }, // Green
-  //   { color: "#d1d5db", transform: "rotate(1deg)" }, // Light gray
-  //   { color: "#9ca3af", transform: "rotate(0deg)" }, // Medium gray
-  //   { color: "#6b7280", transform: "rotate(-1deg)" }, // Darker gray
-  //   { color: "#4b5563", transform: "rotate(1deg)" }, // Dark gray
-  //   { color: "#374151", transform: "rotate(0deg)" }, // Very dark gray
-  //   { color: "#1f2937", transform: "rotate(-1deg)" }, // Almost black
-  // ];
-
   return (
     <div style={styles.container}>
-      {/* Navigation */}
-      {/* <nav style={styles.navbar}>
-        <div style={styles.navLeft}>
-          <a href="/" style={styles.navLink}>
-            Home
-          </a>
-          <a href="/About.jsx" style={styles.navLink}>
-            About
-          </a>
-          <a href="#" style={styles.navLink}>
-            Katalog
-          </a>
-          <a href="/Contact.jsx" style={styles.navLink}>
-            Contact
-          </a>
-        </div>
-
-        <div style={styles.logo}>Thrift.Garage</div>
-
-        <div style={styles.navRight}>
-          <div style={styles.searchContainer}>
-            <Search style={styles.searchIcon} />
-            <input
-              type="text"
-              placeholder="Search for products..."
-              style={styles.searchInput}
-            />
-          </div>
-          <ShoppingCart style={styles.navIcon} />
-          <User style={styles.navIcon} />
-        </div>
-      </nav> */}
 
       {/* Main Hero Section */}
       <div style={styles.hero}>
