@@ -1,6 +1,18 @@
 import React from "react";
-import { Search, ShoppingCart, User, Instagram, Facebook, Twitter } from "lucide-react";
+import {
+  Search,
+  ShoppingCart,
+  User,
+  Instagram,
+  Facebook,
+  Twitter,
+} from "lucide-react";
 import bgThrift from "../assets/bg_thrift.png";
+import imgProduct1 from "../assets/img-miumiu.jpeg";
+import imgProduct2 from "../assets/img-girbaud.jpeg";
+import imgProduct3 from "../assets/img-run.jpeg";
+import imgProduct4 from "../assets/img-loropiana.jpeg";
+
 
 const Home = () => {
   const styles = {
@@ -127,7 +139,7 @@ const Home = () => {
     brandItalic: {
       fontStyle: "italic",
     },
-     // Footer Styles
+    // Footer Styles
     footer: {
       backgroundColor: "#2B3723",
       color: "white",
@@ -332,7 +344,7 @@ const Home = () => {
               padding: "1.5rem",
               borderRadius: "1rem",
               backgroundColor: "#fff",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.1)", 
+              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
               transition: "transform 0.2s",
               cursor: "pointer",
             }}
@@ -379,9 +391,22 @@ const Home = () => {
             gap: "2rem",
           }}
         >
-          {[1, 2, 3, 4].map((item) => (
+          {[
+            {
+              img: imgProduct1,
+              title: "Ziprem Adidas",
+              price: "Rp 175.000",
+            },
+            { img: imgProduct2, title: "Nike Hoodie", price: "Rp 210.000" },
+            {
+              img: imgProduct3,
+              title: "Champion Crewneck",
+              price: "Rp 190.000",
+            },
+            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
+          ].map((item, idx) => (
             <div
-              key={item}
+              key={idx}
               style={{
                 border: "1px solid #E5E7EB",
                 borderRadius: "1rem",
@@ -390,26 +415,19 @@ const Home = () => {
                 textAlign: "center",
               }}
             >
-              <div
+              <img
+                src={item.img}
+                alt={item.title}
                 style={{
                   width: "100%",
                   height: "200px",
-                  backgroundColor: "#F3F4F6",
+                  objectFit: "cover",
                   borderRadius: "1rem",
                   marginBottom: "1rem",
                 }}
-              >
-                <span
-                  style={{
-                    lineHeight: "200px",
-                    color: "#9CA3AF",
-                  }}
-                >
-                  Gambar Produk
-                </span>
-              </div>
-              <h3 style={{ fontWeight: "bold" }}>Ziprem Adidas</h3>
-              <p style={{ color: "#6B7280" }}>Rp 175.000</p>
+              />
+              <h3 style={{ fontWeight: "bold" }}>{item.title}</h3>
+              <p style={{ color: "#6B7280" }}>{item.price}</p>
             </div>
           ))}
         </div>
