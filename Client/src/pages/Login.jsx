@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import bgThrift from "../assets/image-login.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const navigate = useNavigate(); 
+    const handleSubmit = (e) => {
+    e.preventDefault();
+
+  if (email === "user@gmail.com" && password === "123456"){
+    navigate("/");
+  }else {
+    alert("Email dan password salah!");
+  }
+};
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       {/* KIRI: FORM LOGIN */}
@@ -12,12 +25,14 @@ const Login = () => {
             Silakan login untuk melanjutkan
           </p>
 
-          <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div>
               <label style={{ fontSize: '0.875rem', fontWeight: '500' }}>Email address</label>
               <input
                 type="email"
                 placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 style={{
                   marginTop: '0.25rem',
                   width: '100%',
@@ -32,6 +47,8 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 style={{
                   marginTop: '0.25rem',
                   width: '100%',
@@ -77,7 +94,7 @@ const Login = () => {
           </div>
 
           <p style={{ textAlign: 'center', fontSize: '0.875rem', marginTop: '1rem' }}>
-            Belum punya akun? <a href="#" style={{ color: '#2563eb' }}>Sign up</a>
+            Belum punya akun? <a href="/register" style={{ color: '#2563eb' }}>Sign up</a>
           </p>
         </div>
       </div>
