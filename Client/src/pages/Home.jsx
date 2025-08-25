@@ -171,30 +171,30 @@ const Home = () => {
       }}>
         {[
           {
-            title: "100% Original",
-            description: "Barang thrift dijamin original dan berkualitas",
+            title: "100% Dijamin kebersihan pakaian",
+            description: "Barang thrift dijamin kebersihan pakaiannya",
             icon: "🧥"
           },
           {
-            title: "Packing Aman",
-            description: "Packing rapi dan aman sampai tujuan",
+            title: "Pengemasan berkualitas",
+            description: "Selain bersih produk akan mendapatkan free packaging",
             icon: "📦"
           },
           {
-            title: "Harga Terjangkau",
-            description: "Produk thrift pilihan harga bersahabat",
+            title: "Harga & promo menarik",
+            description: "Tersedia paket bundling & paket usaha",
             icon: "💸"
           },
           {
-            title: "Pelanggan Puas",
-            description: "Ribuan pelanggan puas belanja disini",
+            title: "Customer Support",
+            description: "Layanan customer online 24/7",
             icon: "🧑‍🤝‍🧑"
           }
         ].map((item, idx) => (
           <div key={idx} style={{
             width: '200px',
             textAlign: 'center',
-            border: idx === 2 ? '2px solid #000' : 'none',
+            border: idx === 5 ? '2px solid #000' : 'none',
             padding: '1rem',
             borderRadius: '1rem',
             boxShadow: idx === 2 ? '0 0 10px rgba(0,0,0,0.1)' : 'none'
