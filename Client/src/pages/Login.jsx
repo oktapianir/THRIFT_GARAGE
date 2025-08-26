@@ -30,7 +30,7 @@ const Login = () => {
               <label style={{ fontSize: '0.875rem', fontWeight: '500' }}>Email address</label>
               <input
                 type="email"
-                placeholder="you@example.com"
+                placeholder="you@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={{
