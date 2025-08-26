@@ -44,6 +44,7 @@ const Header = () => {
       fontWeight: "bold",
       color: "#2B3723",
       textDecoration: "none",
+      padding: "1rem"
     },
     navRight: {
       display: "flex",
@@ -55,7 +56,7 @@ const Header = () => {
     },
     searchInput: {
       paddingLeft: "2.5rem",
-      paddingRight: "1rem",
+      paddingRight: "5rem",
       paddingTop: "0.5rem",
       paddingBottom: "0.5rem",
       border: "1px solid #d1d5db",
