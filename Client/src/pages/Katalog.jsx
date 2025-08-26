@@ -267,6 +267,19 @@ const Katalog = () => {
               />
               <h3 style={{ fontWeight: "bold" }}>{item.title}</h3>
               <p style={{ color: "#6B7280" }}>{item.price}</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <button style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              border: '1px solid #D1D5DB',
+              padding: '0.5rem',
+              borderRadius: '0.5rem'
+            }}>
+              <span>🛒</span> Add to Cart
+            </button>
+          </div>
             </div>
           ))}
         </div>
