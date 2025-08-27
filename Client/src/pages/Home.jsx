@@ -446,7 +446,7 @@ const Home = () => {
                     borderRadius: "0.5rem",
                   }}
                 >
-                  <span>🛒</span> Add to Cart
+                  <span></span> See more 
                 </button>
               </div>
             </div>
