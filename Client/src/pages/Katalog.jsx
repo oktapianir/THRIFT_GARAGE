@@ -1,4 +1,5 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Search,
   ShoppingCart,
@@ -8,12 +9,20 @@ import {
   Twitter,
 } from "lucide-react";
 import {useCart} from "../pages/CartContext";
-import imgProduct1 from "../assets/img-miumiu.jpeg";
-import imgProduct2 from "../assets/img-girbaud.jpeg";
-import imgProduct3 from "../assets/img-run.jpeg";
-import imgProduct4 from "../assets/img-loropiana.jpeg";
-
 const Katalog = () => {
+  const [products, setProducts] = useState([]);
+  const imageBaseUrl = "http://localhost:5000/uploads";
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/products")
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error("Gagal mengambil data produk:", error);
+      });
+  }, []);
   const {addToCart} = useCart();
   const styles = {
     container: {
@@ -211,71 +220,50 @@ const Katalog = () => {
             gap: "2rem",
           }}
         >
-          {[
-            {
-              img: imgProduct1,
-              title: "Ziprem Adidas",
-              price: "Rp 175.000",
-            },
-            { img: imgProduct2, title: "Nike Hoodie", price: "Rp 210.000" },
-            {
-              img: imgProduct3,
-              title: "Champion Crewneck",
-              price: "Rp 190.000",
-            },
-            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
-            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
-            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
-            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
-            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              style={{
-                border: "1px solid #E5E7EB",
-                borderRadius: "1rem",
-                padding: "1rem",
-                width: "200px",
-                textAlign: "center",
-              }}
-            >
-              <img
-                src={item.img}
-                alt={item.title}
-                style={{
-                  width: "100%",
-                  height: "200px",
-                  objectFit: "cover",
-                  borderRadius: "1rem",
-                  marginBottom: "1rem",
-                }}
-              />
-              <h3 style={{ fontWeight: "bold" }}>{item.title}</h3>
-              <p style={{ color: "#6B7280" }}>{item.price}</p>
+          {products.length > 0 ? (
+            products.map((item) => (
               <div
+                key={item.id}
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.75rem",
+                  border: "1px solid #E5E7EB",
+                  borderRadius: "1rem",
+                  padding: "1rem",
+                  width: "200px",
+                  textAlign: "center",
                 }}
               >
+                <img
+                   src={`${imageBaseUrl}/${item.image_url_item}`}
+                  alt={item.name_item}
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "cover",
+                    borderRadius: "1rem",
+                    marginBottom: "1rem",
+                  }}
+                />
+                <h3 style={{ fontWeight: "bold" }}>{item.name_item}</h3>
+                <p style={{ color: "#6B7280" }}>
+                  Rp {parseInt(item.price_item).toLocaleString("id-ID")}
+                </p>
                 <button
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "0.5rem",
+                    marginTop: "0.5rem",
                     border: "1px solid #D1D5DB",
                     padding: "0.5rem",
                     borderRadius: "0.5rem",
+                    cursor: "pointer",
                   }}
-                  onClick={() => addToCart(item)}
+                   onClick={() => addToCart(item)}
                 >
-                  <span>🛒</span> Add to Cart
+                   <span>🛒</span> Add to Cart
                 </button>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>Loading produk...</p>
+          )}
         </div>
       </div>
 
