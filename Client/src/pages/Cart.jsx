@@ -159,9 +159,10 @@ const Cart = () => {
             gap: "2rem",
           }}
         >
-          {cartItems.map((item) => (
+        {/*masih belum berhasil*/}
+          {cartItems.map((item, index) => (
             <div
-              key={item}
+              key={index}
               style={{
                 backgroundColor: "white",
                 padding: "1.5rem",
@@ -170,11 +171,10 @@ const Cart = () => {
                 width: "300px",
               }}
             >
-              <div style={{ marginBottom: "1rem" }}>⭐⭐⭐⭐⭐</div>
-              <p style={{ color: "#4B5563", fontSize: "0.875rem" }}>
-                Barangnya bagus, sesuai deskripsi, pengiriman cepat dan
-                pelayanan ramah!
-              </p>
+                <img src={item.image_url_item} alt={item.name_item} style={{ width: "100%", borderRadius: "0.5rem" }} />
+              <div style={{ marginBottom: "1rem" }}>{item.name_item}</div>
+              <div style={{ marginBottom: "1rem" }}>{item.price.toLocaleString()}</div>
+              <p style={{ color: "#4B5563", fontSize: "0.875rem" }}>{item.description_item}</p>
               <p style={{ fontWeight: "bold", marginTop: "1rem" }}>
                 - Pelanggan
               </p>
