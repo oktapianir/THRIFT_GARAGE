@@ -125,7 +125,7 @@ const Footer = () => {
       padding: "0 3rem",
     },
   }
-   {/* Footer */}
+  return (
       <footer style={styles.footer}>
         {/* Footer Top Promotional Banner */}
         <div style={styles.footerTop}>
@@ -263,6 +263,7 @@ const Footer = () => {
           <p>Thrift.Garage ©2025 All Right Reserved</p>
         </div>
       </footer>
+  );
 };
 
 export default Footer;

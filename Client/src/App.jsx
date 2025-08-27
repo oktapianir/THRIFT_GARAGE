@@ -41,6 +41,7 @@ function Layout() {
           </Routes>
         </div>
       </div>
+      {/* <Footer/> */}
     </>
   );
 }
