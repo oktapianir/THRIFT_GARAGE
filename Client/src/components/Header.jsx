@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, ShoppingCart, User } from "lucide-react";
+import { useCart } from "../pages/CartContext";
 
 const Header = () => {
   const location = useLocation();
+  const { cartItems } = useCart();
 
   const styles = {
     navbar: {
@@ -44,7 +46,7 @@ const Header = () => {
       fontWeight: "bold",
       color: "#2B3723",
       textDecoration: "none",
-      padding: "1rem"
+      padding: "1rem",
     },
     navRight: {
       display: "flex",
@@ -132,7 +134,28 @@ const Header = () => {
             style={styles.searchInput}
           />
         </div>
-        <ShoppingCart style={styles.navIcon} />
+        <div style={{ position: "relative" }}>
+          <Link to="/cart">
+            <ShoppingCart style={styles.navIcon} />
+            {cartItems.length > 0 && (
+              <span
+                style={{
+                  position: "absolute",
+                  top: "-8px",
+                  right: "-8px",
+                  backgroundColor: "red",
+                  color: "white",
+                  borderRadius: "50%",
+                  padding: "2px 6px",
+                  fontSize: "0.75rem",
+                  fontWeight: "bold",
+                }}
+              >
+                {cartItems.length}
+              </span>
+            )}
+          </Link>
+        </div>
         <div style={styles.navRight}>
           <Link to="/login">
             <User style={styles.navIcon} />
