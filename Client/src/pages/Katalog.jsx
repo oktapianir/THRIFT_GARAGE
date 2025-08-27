@@ -12,7 +12,6 @@ import imgProduct2 from "../assets/img-girbaud.jpeg";
 import imgProduct3 from "../assets/img-run.jpeg";
 import imgProduct4 from "../assets/img-loropiana.jpeg";
 
-
 const Katalog = () => {
   const styles = {
     container: {
@@ -60,7 +59,7 @@ const Katalog = () => {
       width: "1rem",
       height: "1rem",
     },
-      navIcon: {
+    navIcon: {
       width: "1.25rem",
       height: "1.25rem",
       color: "#374151",
@@ -191,7 +190,6 @@ const Katalog = () => {
 
   return (
     <div style={styles.container}>
-
       {/* Katalog */}
       <div style={{ padding: "2rem 1rem", textAlign: "center" }}>
         <h2
@@ -223,26 +221,11 @@ const Katalog = () => {
               title: "Champion Crewneck",
               price: "Rp 190.000",
             },
-            { img: imgProduct4, 
-              title: "ZARA Jacket",
-              price: "Rp 250.000" 
-            },
-            { img: imgProduct4,
-              title: "ZARA Jacket", 
-              price: "Rp 250.000" 
-            },
-            { img: imgProduct4,
-              title: "ZARA Jacket", 
-              price: "Rp 250.000" 
-            },
-            { img: imgProduct4,
-              title: "ZARA Jacket", 
-              price: "Rp 250.000" 
-            },
-            { img: imgProduct4,
-              title: "ZARA Jacket", 
-              price: "Rp 250.000" 
-            },
+            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
+            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
+            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
+            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
+            { img: imgProduct4, title: "ZARA Jacket", price: "Rp 250.000" },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -267,19 +250,27 @@ const Katalog = () => {
               />
               <h3 style={{ fontWeight: "bold" }}>{item.title}</h3>
               <p style={{ color: "#6B7280" }}>{item.price}</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <button style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              border: '1px solid #D1D5DB',
-              padding: '0.5rem',
-              borderRadius: '0.5rem'
-            }}>
-              <span>🛒</span> Add to Cart
-            </button>
-          </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                }}
+              >
+                <button
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "0.5rem",
+                    border: "1px solid #D1D5DB",
+                    padding: "0.5rem",
+                    borderRadius: "0.5rem",
+                  }}
+                >
+                  <span>🛒</span> Add to Cart
+                </button>
+              </div>
             </div>
           ))}
         </div>
