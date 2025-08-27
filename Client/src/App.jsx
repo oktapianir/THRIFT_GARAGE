@@ -1,14 +1,18 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import './App.css';
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar"; 
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer"; 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Katalog from "./pages/Katalog";
+import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Admin/Dashboard";
+
+import { CartProvider } from "./pages/CartContext";
 
 function Layout() {
   const location = useLocation();
@@ -30,6 +34,7 @@ function Layout() {
             <Route path="/about" element={<About />} />
             <Route path="/katalog" element={<Katalog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -42,9 +47,11 @@ function Layout() {
 
 function App() {
   return (
+    <CartProvider>
     <Router>
       <Layout />
     </Router>
+    </CartProvider>
   );
 }
 

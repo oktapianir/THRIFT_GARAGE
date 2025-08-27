@@ -7,12 +7,14 @@ import {
   Facebook,
   Twitter,
 } from "lucide-react";
+import {useCart} from "../pages/CartContext";
 import imgProduct1 from "../assets/img-miumiu.jpeg";
 import imgProduct2 from "../assets/img-girbaud.jpeg";
 import imgProduct3 from "../assets/img-run.jpeg";
 import imgProduct4 from "../assets/img-loropiana.jpeg";
 
 const Katalog = () => {
+  const {addToCart} = useCart();
   const styles = {
     container: {
       minHeight: "100vh",
@@ -267,6 +269,7 @@ const Katalog = () => {
                     padding: "0.5rem",
                     borderRadius: "0.5rem",
                   }}
+                  onClick={() => addToCart(item)}
                 >
                   <span>🛒</span> Add to Cart
                 </button>
