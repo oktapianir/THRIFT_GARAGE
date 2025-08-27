@@ -154,6 +154,50 @@ const Home = () => {
           )}
         </div>
       </div>
+       {/* Testimonials Section */}
+      <div style={{ backgroundColor: "#F9FAFB", padding: "3rem 1rem" }}>
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "2rem",
+            fontWeight: "bold",
+            marginBottom: "1rem",
+          }}
+        >
+         Testimoni Here!!
+        </h2>
+        <p>All testimonials from Thrift.Garage customers</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "2rem",
+          }}
+        >
+          {[1, 2, 3].map((item) => (
+            <div
+              key={item}
+              style={{
+                backgroundColor: "white",
+                padding: "1.5rem",
+                borderRadius: "1rem",
+                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+                width: "300px",
+              }}
+            >
+              <div style={{ marginBottom: "1rem" }}>⭐⭐⭐⭐⭐</div>
+              <p style={{ color: "#4B5563", fontSize: "0.875rem" }}>
+                Barangnya bagus, sesuai deskripsi, pengiriman cepat dan
+                pelayanan ramah!
+              </p>
+              <p style={{ fontWeight: "bold", marginTop: "1rem" }}>
+                - Pelanggan
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Footer */}
       <footer
