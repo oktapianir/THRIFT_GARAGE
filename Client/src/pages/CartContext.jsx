@@ -18,5 +18,5 @@ export const CartProvider = ({ children }) => {
 
 export default CartContext;
 
-// Hook custom untuk akses context lebih mudah (shortcut untuk memudahkan dalam penggunaan useContext di file CartContext)
+// Hook custom untuk aks0es context lebih mudah (shortcut untuk memudahkan dalam penggunaan useContext di file CartContext)
 export const useCart = () => useContext(CartContext);

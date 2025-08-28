@@ -13,47 +13,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Katalog from "./pages/Katalog";
 import Cart from "./pages/Cart";
+import DetailItem from "./pages/Detail-Item";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Admin/Dashboard";
 import DataItem from "./pages/Admin/Data-item";
 import { CartProvider } from "./pages/CartContext";
-
-// function Layout() {
-//   const location = useLocation();
-//   const isDashboardPage = location.pathname.startsWith("/dashboard");
-//   // const isDataItemPage = location.pathname.startsWith("/dataitem");
-
-//   return (
-//     <>
-//       {/* Header hanya jika bukan halaman dashboard */}
-//       {!isDashboardPage && <Header />}
-//       {/* {!isDataItemPage && <Header />} */}
-
-//       <div style={{ display: "flex" }}>
-//         {/* Sidebar hanya jika di halaman dashboard */}
-//         {isDashboardPage && <Sidebar isOpen={true} onClose={() => {}} />}
-//         {/* {isDataItemPage && <Sidebar isOpen={true} onClose={() => {}} />} */}
-
-//         {/* Routing utama */}
-//         <div style={{ flex: 1, paddingLeft: isDashboardPage ? "250px" : "0" }}>
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/about" element={<About />} />
-//             <Route path="/katalog" element={<Katalog />} />
-//             <Route path="/contact" element={<Contact />} />
-//             <Route path="/cart" element={<Cart />} />
-//             <Route path="/login" element={<Login />} />
-//             <Route path="/register" element={<Register />} />
-//             <Route path="/dashboard" element={<Dashboard />} />
-//             <Route path="/dataitem" element={<DataItem />} />
-//           </Routes>
-//         </div>
-//       </div>
-//       {/* <Footer/> */}
-//     </>
-//   );
-// }
 
 function Layout() {
   const location = useLocation();
@@ -76,6 +41,7 @@ function Layout() {
             <Route path="/katalog" element={<Katalog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/detail-item" element={<DetailItem />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />

@@ -9,8 +9,16 @@ import {
   Twitter,
 } from "lucide-react";
 import bgThrift from "../assets/bg_thrift.png";
+import {useNavigate} from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/login");
+  }
+  const handleClickCard = () => {
+    navigate("/detail-item");
+  }
   const [products, setProducts] = useState([]);
   const imageBaseUrl = "http://localhost:5000/uploads";
 
@@ -47,7 +55,7 @@ const Home = () => {
             Step into a world where fashion finds new meaning. Every piece
             carries a story.
           </p>
-          <button
+          <button onClick={handleClick}
             style={{
               marginTop: "2rem",
               backgroundColor: "#2B3723",
@@ -136,7 +144,7 @@ const Home = () => {
                 <p style={{ color: "#6B7280" }}>
                   Rp {parseInt(item.price_item).toLocaleString("id-ID")}
                 </p>
-                <button
+                <button onClick={handleClickCard}
                   style={{
                     marginTop: "0.5rem",
                     border: "1px solid #D1D5DB",
