@@ -1,38 +1,20 @@
 const express = require("express");
-const mysql = require("mysql2");
+// const mysql = require("mysql2");
+const multer = require("multer");
 const cors = require("cors");
 const path = require("path");
+const db = require("./db");
 
+const productRoutes = require("./routes/products");
 
 const app = express();
 const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
-
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "mysql123",
-  database: "thrift_garage",
-});
-
-db.connect((err) => {
-  if (err){
-    console.error("DB connection failed:", err);
-    return;
-  }
-  console.log("Connected to MySql database");
-})
-
-app.get("/api/products", (req, res) => {
-  db.query("SELECT * FROM products", (err, results) => {
-    if (err) {
-      return res.status(500).json({error : err});
-    }
-    res.json(results);
-  });
-});
+app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static("uplaods"));
+app.use("/api/products", productRoutes);
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
