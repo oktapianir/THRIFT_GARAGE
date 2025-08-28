@@ -12,7 +12,7 @@ const Login = () => {
   if (email === "user@gmail.com" && password === "123456"){
     navigate("/");
   } else if(email === "admin@gmail.com" && password === "654321"){
-    navigate("/dashboard");
+    navigate("/admin/dashboard");
   }else {
     alert("Email dan password salah!");
   }
