@@ -180,7 +180,7 @@ const DataItem = () => {
           {products.map((item) => (
             <tr key={item.id}>
               <td style={tdStyle}>{item.name_item}</td>
-              <td style={tdStyle}>Rp{item.price_item}</td>
+              <td style={tdStyle}>Rp{item.price_item.toLocaleString()}</td>
               <td style={tdStyle}>{item.description}</td>
               <td style={tdStyle}>
                 {item.image_url_item ? (
