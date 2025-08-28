@@ -6,11 +6,10 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import {useCart} from "../pages/CartContext";
+import { useCart } from "../pages/CartContext";
 
 const Cart = () => {
-    const {cartItems} = useCart();
-    
+  const { cartItems } = useCart();
 
   const styles = {
     // Footer Styles
@@ -137,8 +136,7 @@ const Cart = () => {
 
   return (
     <div style={styles.container}>
-    
-        {/* Testimonials Section */}
+      {/* Testimonials Section */}
       <div style={{ backgroundColor: "#F9FAFB", padding: "3rem 1rem" }}>
         <h2
           style={{
@@ -159,7 +157,7 @@ const Cart = () => {
             gap: "2rem",
           }}
         >
-        {/*masih belum berhasil*/}
+          {/*masih belum berhasil*/}
           {cartItems.map((item, index) => (
             <div
               key={index}
@@ -171,12 +169,21 @@ const Cart = () => {
                 width: "300px",
               }}
             >
-                <img src={item.image_url_item} alt={item.name_item} style={{ width: "100%", borderRadius: "0.5rem" }} />
-              <div style={{ marginBottom: "1rem" }}>{item.name_item}</div>
-              <div style={{ marginBottom: "1rem" }}>{item.price.toLocaleString()}</div>
-              <p style={{ color: "#4B5563", fontSize: "0.875rem" }}>{item.description_item}</p>
-              <p style={{ fontWeight: "bold", marginTop: "1rem" }}>
-                - Pelanggan
+              {item.image_url_item && (
+                <img
+                  src={item.image_url_item}
+                  alt={item.name_item}
+                  style={{ width: "100%", borderRadius: "0.5rem" }}
+                />
+              )}
+              <div style={{ marginBottom: "1rem" }}>
+                {item.name_item || "No name"}
+              </div>
+              <div style={{ marginBottom: "1rem" }}>Rp
+                {item.price_item ? item.price_item.toLocaleString() : "No price"}
+              </div>
+              <p style={{ color: "#4B5563", fontSize: "0.875rem" }}>
+                {item.description || "No description"}
               </p>
             </div>
           ))}
