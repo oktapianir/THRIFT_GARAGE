@@ -1,207 +1,9 @@
-// import React, { useState } from "react";
-import {
-  Search,
-  ShoppingCart,
-  User,
-  Twitter,
-  Facebook,
-  Instagram,
-} from "lucide-react";
-import bgThrift from "../assets/model_thrift.jpg";
+import React from "react";
+import bgThrift from "../assets/img-cover-about.jpg";
+import { Twitter, Facebook, Instagram } from "lucide-react";
 
 const About = () => {
-  // const [cartCount, setCartCount] = useState(0);
-
   const styles = {
-    container: {
-      minHeight: "100vh",
-      backgroundColor: "white",
-    },
-    navbar: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "1.5rem 3rem",
-      backgroundColor: "white",
-    },
-    navLeft: {
-      display: "flex",
-      alignItems: "center",
-      gap: "3rem",
-    },
-    navLink: {
-      textDecoration: "none",
-      color: "#374151",
-      fontWeight: "500",
-      fontSize: "0.875rem",
-      transition: "color 0.3s",
-    },
-    logo: {
-      fontSize: "1.5rem",
-      fontWeight: "bold",
-      color: "black",
-    },
-    navRight: {
-      display: "flex",
-      alignItems: "center",
-      gap: "1.5rem",
-    },
-    searchContainer: {
-      position: "relative",
-    },
-    searchInput: {
-      paddingLeft: "2.5rem",
-      paddingRight: "1rem",
-      paddingTop: "0.5rem",
-      paddingBottom: "0.5rem",
-      border: "1px solid #d1d5db",
-      borderRadius: "0.5rem",
-      width: "15rem",
-      fontSize: "0.875rem",
-      outline: "none",
-    },
-    searchIcon: {
-      position: "absolute",
-      left: "0.75rem",
-      top: "50%",
-      transform: "translateY(-50%)",
-      color: "#9ca3af",
-      width: "1rem",
-      height: "1rem",
-    },
-    navIcon: {
-      width: "1.25rem",
-      height: "1.25rem",
-      color: "#374151",
-      cursor: "pointer",
-    },
-    hero: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      backgroundColor: "white",
-      minHeight: "calc(100vh - 88px)",
-    },
-    heroLeft: {
-      width: "50%",
-      paddingLeft: "4rem",
-      paddingRight: "2rem",
-      paddingTop: "4rem",
-      paddingBottom: "4rem",
-    },
-    heroTitle: {
-      fontSize: "3.75rem",
-      fontWeight: "bold",
-      color: "black",
-      lineHeight: "1.1",
-      marginBottom: "2rem",
-    },
-    heroText: {
-      color: "#374151",
-      fontSize: "1rem",
-      lineHeight: "1.6",
-      marginBottom: "0.25rem",
-    },
-    heroSubtext: {
-      color: "black",
-      fontSize: "1rem",
-      fontWeight: "500",
-      marginTop: "1.5rem",
-      marginBottom: "2.5rem",
-    },
-    shopButton: {
-      backgroundColor: "#2B3723",
-      color: "white",
-      padding: "0.75rem 2rem",
-      borderRadius: "9999px",
-      fontWeight: "500",
-      fontSize: "0.875rem",
-      border: "none",
-      cursor: "pointer",
-      transition: "background-color 0.3s",
-    },
-    heroRight: {
-      width: "50%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      paddingRight: "4rem",
-    },
-    clothingRack: {
-      position: "relative",
-      width: "450px",
-      height: "400px",
-    },
-    rackPole: {
-      position: "absolute",
-      left: "50%",
-      top: "0",
-      width: "0.75rem",
-      height: "5rem",
-      backgroundColor: "#d97706",
-      borderRadius: "9999px",
-      transform: "translateX(-50%)",
-    },
-    rackBar: {
-      position: "absolute",
-      top: "4rem",
-      left: "2rem",
-      right: "2rem",
-      height: "0.75rem",
-      backgroundColor: "#d97706",
-      borderRadius: "9999px",
-    },
-    clothesContainer: {
-      position: "absolute",
-      top: "5rem",
-      left: "3rem",
-      right: "3rem",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "flex-start",
-    },
-    clothingItem: {
-      width: "3.5rem",
-      height: "6rem",
-      borderTopLeftRadius: "0.5rem",
-      borderTopRightRadius: "0.5rem",
-      boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-      transition: "transform 0.3s",
-    },
-    hangerContainer: {
-      position: "absolute",
-      top: "3rem",
-      left: "3.5rem",
-      right: "3.5rem",
-      display: "flex",
-      justifyContent: "space-between",
-    },
-    hanger: {
-      width: "0.5rem",
-      height: "1.5rem",
-      backgroundColor: "white",
-      borderRadius: "0.125rem",
-      boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-    },
-    brandSection: {
-      backgroundColor: "#2B3723",
-      padding: "3rem 0",
-    },
-    brandContainer: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "5rem",
-    },
-    brandText: {
-      color: "white",
-      fontSize: "1.875rem",
-      fontWeight: "bold",
-    },
-    brandItalic: {
-      fontStyle: "italic",
-    },
-    // Footer Styles
     footer: {
       backgroundColor: "#2B3723",
       color: "white",
@@ -243,6 +45,7 @@ const About = () => {
       display: "flex",
       alignItems: "center",
       gap: "0.5rem",
+      marginBottom: "0.5rem",
     },
     liveBadge: {
       backgroundColor: "#dc2626",
@@ -287,7 +90,6 @@ const About = () => {
       alignItems: "center",
       justifyContent: "center",
       cursor: "pointer",
-      transition: "background-color 0.3s",
     },
     socialIconSvg: {
       width: "1rem",
@@ -309,7 +111,6 @@ const About = () => {
       fontSize: "0.875rem",
       color: "#d1d5db",
       textDecoration: "none",
-      transition: "color 0.3s",
       cursor: "pointer",
     },
     footerBottom: {
@@ -324,19 +125,31 @@ const About = () => {
   };
 
   return (
-    <div style={styles.container}>
-
-      {/* Main Hero Section */}
-      <div style={styles.hero}>
-        {/* Left Side Content */}
-        <div style={styles.heroLeft}>
-          <h1 style={styles.heroTitle}>
-            THRIFT.GARAGE
-            <br />
-          </h1>
-
-          <div>
-            <p style={styles.heroText}>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+    >
+      {/* Konten Utama */}
+      <div style={{ flex: "1", display: "flex" }}>
+        {/* KIRI: INFORMASI */}
+        <div
+          style={{
+            width: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div style={{ width: "100%", maxWidth: "400px", padding: "2rem" }}>
+            <h2
+              style={{
+                fontSize: "1.75rem",
+                fontWeight: "bold",
+                marginBottom: "1rem",
+              }}
+            >
+              Thrift.Garage
+            </h2>
+            <p style={{ marginBottom: "1.5rem", color: "#6B7280" }}>
               Kami percaya bahwa tampil stylish tidak harus mahal. Di sini, kamu
               bisa menemukan berbagai jenis pakaian mulai dari hoodie, sweater,
               kemeja, jaket, hingga fashion kasual lainnya dengan merek-merek
@@ -344,35 +157,42 @@ const About = () => {
               dengan teliti agar tetap terjaga kebersihan, kualitas, dan
               kelayakannya, sehingga nyaman dipakai dan tetap terlihat keren.
             </p>
+
+            {/* <div style={{ textAlign: 'center', margin: '1rem 0', color: '#9CA3AF' }}>DAN</div> */}
+            <p style={{ marginBottom: "1.5rem", color: "#6B7280" }}>
+              {" "}
+              Punya pertanyaan soal ukuran, stok, atau pengiriman? Kami siap
+              bantu kamu 24/7 melalui WhatsApp atau DM Instagram! Jangan ragu
+              untuk ngobrol langsung dengan tim kami.
+            </p>
+            <h5
+              style={{
+                fontSize: "1.75rem",
+                fontWeight: "bold",
+                marginBottom: "1rem",
+              }}
+            >
+              Jangan cuma lihat, yuk mulai #ThriftHunt bareng kami sekarang
+              juga! Temukan item impianmu sebelum kehabisan!
+            </h5>
           </div>
-
-          <button
-            style={styles.shopButton}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#2B3723")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#2B3723")}
-          >
-            Ayo berkenalan lebih jauh
-          </button>
         </div>
 
-        {/* Right Side - Clothing Rack */}
-        <div style={styles.heroRight}>
-          <img
-            src={bgThrift}
-            alt="Clothing Rack with various colored clothes"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              objectFit: "contain",
-              maxHeight: "500px",
-            }}
-          />
-        </div>
+        {/* KANAN: GAMBAR */}
+        <div
+          style={{
+            width: "50%",
+            backgroundImage: `url(${bgThrift})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
       </div>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer style={styles.footer}>
-        {/* Footer Top Promotional Banner */}
+        {/* Footer Top */}
         <div style={styles.footerTop}>
           <div style={styles.footerPromo}>
             <h3 style={styles.footerPromoTitle}>
@@ -393,62 +213,20 @@ const About = () => {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
           >
-            <div
-              style={{
-                width: "2rem",
-                height: "2rem",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Instagram
-                style={{ width: "1rem", height: "1rem", color: "#2B3723" }}
-              />
+            <div style={styles.socialIcon}>
+              <Instagram style={styles.socialIconSvg} />
             </div>
-            <div
-              style={{
-                width: "2rem",
-                height: "2rem",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: "1rem",
-                  height: "1rem",
-                  backgroundColor: "#2B3723",
-                  borderRadius: "50%",
-                }}
-              />
+            <div style={styles.socialIcon}>
+              <Facebook style={styles.socialIconSvg} />
             </div>
-            <div
-              style={{
-                width: "2rem",
-                height: "2rem",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Facebook
-                style={{ width: "1rem", height: "1rem", color: "#2B3723" }}
-              />
+            <div style={styles.socialIcon}>
+              <Twitter style={styles.socialIconSvg} />
             </div>
           </div>
         </div>
 
         {/* Footer Main Content */}
         <div style={styles.footerContent}>
-          {/* Brand Section */}
           <div style={styles.footerBrand}>
             <h4 style={styles.footerBrandTitle}>THRIFT.GARAGE</h4>
             <p style={styles.footerBrandDescription}>
