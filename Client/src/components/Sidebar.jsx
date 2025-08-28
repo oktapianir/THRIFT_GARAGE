@@ -46,9 +46,10 @@ const Sidebar = ({ isOpen, onClose }) => {
       </button>
 
       <nav>
+        <Link to="/admin/dashboard" style={styles.link}>Beranda</Link>
         <Link to="/" style={styles.link}>Pemesanan</Link>
         <Link to="/" style={styles.link}>Pembayaran</Link>
-        <Link to="/" style={styles.link}>Data Item</Link>
+        <Link to="/admin/dataitem" style={styles.link}>Data Item</Link>
         <Link to="/login" style={styles.link}>Logout</Link>
       </nav>
     </div>
