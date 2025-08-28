@@ -82,7 +82,7 @@ const Login = () => {
           <div style={{ textAlign: 'center', margin: '1rem 0', color: '#9CA3AF' }}>atau</div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <button style={{
+            {/* <button style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -92,7 +92,7 @@ const Login = () => {
               borderRadius: '0.5rem'
             }}>
               <span>🔵</span> Sign in with Google
-            </button>
+            </button> */}
           </div>
 
           <p style={{ textAlign: 'center', fontSize: '0.875rem', marginTop: '1rem' }}>
