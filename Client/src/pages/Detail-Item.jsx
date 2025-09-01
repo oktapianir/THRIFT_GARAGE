@@ -1,10 +1,19 @@
 import React from "react";
 import mainImage from "../assets/img-girbaud.jpeg";
 import {useCart} from "../pages/CartContext";
+import { useNavigate } from "react-router-dom";
 // import React, {useEffect, useState} from "react";
 // import { useParams } from "react-router-dom";
 const DetailItem = () => {
     const {addToCart} = useCart();
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+      // checkout();
+
+      navigate("/checkout");
+
+    }
     // const {id} = useParams();
     // const [product, setProduct] = useState(null);
     // const [loading, setLoading] = useState(true);
@@ -72,6 +81,25 @@ const DetailItem = () => {
             onClick={() => addToCart()}
         >
           Add to Cart
+        </button>
+
+        {/* Tombol Chekout */}
+        <button
+          style={{
+            marginTop: "1rem",
+            width: "100%",
+            padding: "1rem",
+            backgroundColor: "black",
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "1rem",
+            borderRadius: "8px",
+            cursor: "pointer",
+            border: "none",
+          }}
+            onClick={() => handleCheckout()}
+        >
+          Checkout 
         </button>
 
         {/* Deskripsi */}
