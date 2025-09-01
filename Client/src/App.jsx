@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Katalog from "./pages/Katalog";
 import Cart from "./pages/Cart";
 import DetailItem from "./pages/Detail-Item";
+import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Admin/Dashboard";
@@ -42,6 +43,7 @@ function Layout() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/detail-item" element={<DetailItem />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
