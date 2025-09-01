@@ -23,3 +23,23 @@ values ('Polo Ralph Lauren', 300000, 'Polo Ralph.jpg', 'Sweater rajut klasik, El
 
 
 select * from products;
+
+create table pembayaran(
+	id_pembayaran INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(25),
+    harga INT,
+    status ENUM('Pending','Lunas') Default 'Pending',
+    tanggal_pembayaran TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    bukti_image VARCHAR(255)
+);
+
+-- drop table pembayaran;
+
+insert into pembayaran (id_pembayaran, nama, harga, status, tanggal_pembayaran, bukti_image) values (
+1, 'Lili', 500000, 'Pending', '2025-09-01', 'Polo Ralph.jpg'
+);
+
+select * from pembayaran;
+
+
+

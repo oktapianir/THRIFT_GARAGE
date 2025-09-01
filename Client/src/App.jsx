@@ -19,6 +19,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Admin/Dashboard";
 import DataItem from "./pages/Admin/Data-item";
+import Pembayaran from "./pages/Admin/Pembayaran";
 import { CartProvider } from "./pages/CartContext";
 
 function Layout() {
@@ -48,6 +49,7 @@ function Layout() {
             <Route path="/register" element={<Register />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/dataitem" element={<DataItem />} /> {/* Perhatikan prefix /admin */}
+            <Route path="/admin/pembayaran" element={<Pembayaran />} />
           </Routes>
         </div>
       </div>
